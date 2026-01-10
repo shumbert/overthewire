@@ -107,18 +107,5 @@ if __name__ == "__main__":
 
 The only difference with narnia2 is that the stack frame now has a 256 byte buffer, and a 4 byte integer, so we need to overwrite 268 bytes in total.
 
-
-```
-set disassembly-flavor intel
-tui new-layout foobar {-horizontal asm 2 regs 1} 2 status 0 cmd 1
-layout foobar
-break *main+82
-```
-
-
-```
-/narnia/narnia2 $(python3 gen_payload.py 0xffffd108)
-```
-
 # The end
 Password for the next level is `Ni3xHPEuuw`.
